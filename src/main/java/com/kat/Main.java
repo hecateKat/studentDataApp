@@ -2,15 +2,26 @@ package com.kat;
 
 import com.kat.entity.Student;
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
 
-        Student student1 = new Student();
-        student1.enroll();
-        student1.payTuition();
-        student1.viewBalance();
-        System.out.println(student1.showInfo());
+        System.out.println("Enter number of students enrolling courses: ");
+        Scanner sc = new Scanner(System.in);
+        int numOfStudents = sc.nextInt();
+        Student[] students = new Student[numOfStudents];
+
+
+        for (int n =0; n< numOfStudents; n++){
+            students[n] = new Student();
+            students[n].enroll();
+            students[n].payTuition();
+            students[n].viewBalance();
+            System.out.println(students[n].showInfo());
+        }
+
 
     }
 }
